@@ -21,3 +21,5 @@ visualizeR supports the following chart types for numeric(continuous) features:
 4. boxPlot - provides a box plot color coded according to the outcome feature
 
 visualizeR can also output all the plots to a .PDF file, when using the parameter 'outputPath' be sure to check the slashes ("/","\") that your system uses to ensure an error free experience.
+
+For full parameter details please run the following command after you have installed and loaded visualizeR. '?visualizeR'

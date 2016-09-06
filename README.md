@@ -25,9 +25,11 @@ For full parameter details please run the following command after you have insta
 To install `visualizeR` simply use the code below:
 
 `install.packages('devtools')`
+
 `library(devtools)`
 
 `devtools::install_github("XanderHorn/visualizeR")`
+
 `library(visualizeR)`
 
 #Parameters:

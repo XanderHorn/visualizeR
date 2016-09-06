@@ -23,15 +23,26 @@ For full parameter details please run the following command after you have insta
 #Parameters:
 
 `df`: A data.frame object containing plotting features and target/outcome feature. Cannot be left blank.
+
 `Outcome`: The feature name of the outcome as character format, e.g. 'Target'. Cannot be left blank.
-`nrBins`: The number of bins to use in histogram plots of numerical features should 'stackedHist' be used as the chart type in the `parameter`: 'NumChartType'.
+
+`nrBins`: The number of bins to use in histogram plots of numerical features should 'stackedHist' be used as the chart type in the parameter: 'NumChartType'.
+
 `sample`: Should a random sample be taken in order to speed the plotting process up.
+
 `clipOutliers`: Should outliers be fixed in the data using a median approach. Possible values: 'Y','N'
+
 `handleMissing`: Should missing values be corrected with 'Missing' value for categorical variables and median imputation for conitnuous variables. Possible values: 'Y','N', Should this be left as 'N' then missing observations will be removed from the plots.
+
 `CatChartType`: Indicates the type of chart to use when plotting categorical/factor features. Possible values: 'stackedHist', 'Confusion'
+
 `NumChartType`: Indicates the type of chart to use when plotting numerical/continuous features. Possible values: 'stackedHist', 'densityLine', 'densityFill', 'boxPlot'
+
 `summaryStats`: Should summary statistics be printed for predictors in the dataset, summary stats for continuous and frequency tables for categorical variables. Possible values: 'Y','N'
+
 `seed`: Used only for the sampling of the data and to reproduce the plots.
+
 `ouputPath`: A file path where the plots should be saved in a PDF document. If left blank all plots will be displayed in R.
+
 `outputFileName`: The name of the file containing all the plots.
 

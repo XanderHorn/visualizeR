@@ -20,6 +20,16 @@ For full parameter details please run the following command after you have insta
 
 `visualizeR` utilizes the package `pacman`, which manages all packages in R. Install `pacman` with the installation of `visualizeR` and everything package wise will be sorted.
 
+#Installation:
+
+To install `visualizeR` simply use the code below:
+
+`install.packages('devtools')`
+`library(devtools)`
+
+`devtools::install_github("XanderHorn/visualizeR")`
+`library(visualizeR)`
+
 #Parameters:
 
 `df`: A data.frame object containing plotting features and target/outcome feature. Cannot be left blank.

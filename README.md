@@ -2,6 +2,8 @@
 
 `visualizeR` is a library for R to attempt to make exploratory data analysis for classification problems in the field of machine learning automatic.
 
+~~~~~~~~~~~~~~~~~ PLEASE NOTE THAT visualizeR IS IN BETA PHASE ~~~~~~~~~~~~~~~~~ 
+
 #Description
 
 It supports two-class and multi-class classification problems. Some data cleaning needs to be performed prior to runnng visualizeR, it is also recommended that all ID and Date features are removed from the dataset. 

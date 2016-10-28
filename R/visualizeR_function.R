@@ -12,6 +12,7 @@
 #' @param NumChartType Indicates the type of chart to use when plotting numerical/continuous features. Possible values: 'stackedHist', 'densityLine', 'densityFill', 'boxPlot'
 #' @param summaryStats Should summary statistics be printed for predictors in the dataset, summary stats for continuous and frequency tables for categorical variables. Possible values: 'Y','N'
 #' @param seed Used only for the sampling of the data and to reproduce the plots.
+#' @param maxLevels The maximum levels allowed for factor features, if a feature has levels more than the threshold it will not be plotted.
 #' @param ouputPath A file path where the plots should be saved in a PDF document. If left blank all plots will be displayed in R.
 #' @param outputFileName The name of the file containing all the plots.
 #' @keywords visualizeR

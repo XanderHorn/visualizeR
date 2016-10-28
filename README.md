@@ -56,6 +56,8 @@ To install `visualizeR` simply use the code below:
 
 `seed`: Used only for the sampling of the data and to reproduce the plots.
 
+`maxLevels`: The maximum allowed levels for factor features. If this threshold is exceeded the feature will not be plotted. Recommended to limit this as it will make plots hard to read.
+
 `ouputPath`: A file path where the plots should be saved in a PDF document. If left blank all plots will be displayed in R.
 
 `outputFileName`: The name of the file containing all the plots.

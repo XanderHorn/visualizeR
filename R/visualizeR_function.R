@@ -53,6 +53,7 @@ visualizeR <- function(df,
                        NumChartType = 'densityFill',
                        summaryStats = 'Y',
                        seed = 1234,
+                       maxLevels = 25,
                        outputPath = '',
                        outputFileName = 'outputPlots'){
 
@@ -105,7 +106,7 @@ visualizeR <- function(df,
     }
     
     if(class(df[,i]) == 'factor'){
-      ind <- length(levels(df[,i])) > 20
+      ind <- length(levels(df[,i])) > maxLevels
       removeInd[i] <- ifelse(ind ==T,i,NA)
       remove[i] <- ifelse(ind ==T,names(df)[i],NA)
     } else if(class(df[,i]) == 'numeric' & length(unique(df[,i])) <= 20){

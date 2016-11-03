@@ -31,7 +31,9 @@ visualizeR(df, Outcome, nrBins = 30, sample = 0.3, clipOutliers = "Y",
 \item{seed}{Used only for the sampling of the data and to reproduce the plots.}
 
 \item{maxLevels}{The maximum levels allowed for factor features, if a feature has levels more than the threshold it will not be plotted.}            
-            
+
+\item{nrUniques}{The number of allowed unique values for a feature before it is automatically changed to a categorical feature. If a feature has less than this threshold, the feature will be changed to a categorical feature.}            
+  
 \item{outputFileName}{The name of the file containing all the plots.}
 
 \item{ouputPath}{A file path where the plots should be saved in a PDF document. If left blank all plots will be displayed in R.}

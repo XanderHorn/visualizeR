@@ -13,6 +13,7 @@
 #' @param summaryStats Should summary statistics be printed for predictors in the dataset, summary stats for continuous and frequency tables for categorical variables. Possible values: 'Y','N'
 #' @param seed Used only for the sampling of the data and to reproduce the plots.
 #' @param maxLevels The maximum levels allowed for factor features, if a feature has levels more than the threshold it will not be plotted.
+#' @param nrUniques The number of allowed unique values for a feature before it is automatically changed to a categorical feature. If a feature has less than this threshold, the feature will be changed to a categorical feature.
 #' @param ouputPath A file path where the plots should be saved in a PDF document. If left blank all plots will be displayed in R.
 #' @param outputFileName The name of the file containing all the plots.
 #' @keywords visualizeR
@@ -55,6 +56,7 @@ visualizeR <- function(df,
                        summaryStats = 'Y',
                        seed = 1234,
                        maxLevels = 25,
+                       nrUniques = 20,
                        outputPath = '',
                        outputFileName = 'outputPlots'){
 
@@ -75,7 +77,7 @@ visualizeR <- function(df,
   print("                                       Partial Cleaning                                           ")
   print("**************************************************************************************************")
   
-  print("MISSING VALUES ARE ENCODED AS 'Missing' FOR CATEGORICAL AND MEDIAN IMPUTATION IS USED FOR NUMERIC")
+  print("visualizeR | MISSING VALUES ARE ENCODED AS 'Missing' FOR CATEGORICAL AND MEDIAN IMPUTATION IS USED FOR NUMERIC")
   
   #IF GRAPHS SHOULD BE OUTPUTTED TO A PDF FILE
   if(outputPath != ''){
@@ -110,8 +112,8 @@ visualizeR <- function(df,
       ind <- length(levels(df[,i])) > maxLevels
       removeInd[i] <- ifelse(ind ==T,i,NA)
       remove[i] <- ifelse(ind ==T,names(df)[i],NA)
-    } else if(class(df[,i]) == 'numeric' & length(unique(df[,i])) <= 20){
-      print(paste("CHANGED FEATURE: ",names(df)[i]," TO A FACTOR FEATURE DUE TO LOW UNIQUE VALUES",sep=''))
+    } else if(class(df[,i]) == 'numeric' & length(unique(df[,i])) < nrUniques){
+      print(paste("visualizeR | CHANGED FEATURE: ",names(df)[i]," TO A FACTOR FEATURE DUE TO LOW UNIQUE VALUES",sep=''))
       df[,i] <- as.factor(df[,i])
     }
     
@@ -122,7 +124,7 @@ visualizeR <- function(df,
     removeInd <- removeInd[!is.na(removeInd)]
     
     for(i in 1:length(remove)){
-      print(paste("REMOVED FEATURE: ",remove[i]," , HAS TOO MANY LEVELS TO PLOT",sep=''))
+      print(paste("visualizeR | REMOVED FEATURE: ",remove[i]," , HAS TOO MANY LEVELS TO PLOT",sep=''))
       
     }
     
@@ -136,7 +138,7 @@ visualizeR <- function(df,
   #CLIP OUTLIERS
   for(i in 1:ncol(df)){
     
-    print(paste("Plotting Feature",names(df)[i],",",i," Of ",ncol(df),": Missing Observations = ",sum(is.na(df[,i]))))
+    print(paste("visualizeR | Plotting Feature",names(df)[i],",",i," Of ",ncol(df),": Missing Observations = ",sum(is.na(df[,i]))))
     
     if(toupper(clipOutliers) == 'Y' & class(df[,i]) == 'numeric'){
       

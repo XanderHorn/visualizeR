@@ -72,11 +72,10 @@ visualizeR <- function(df,
   
   options(scipen=999)  
   
-  cat('\014')
-  print("**************************************************************************************************")
-  print("                                       Partial Cleaning                                           ")
-  print("**************************************************************************************************")
-  
+
+
+  print("visualizeR | 1. Partial Data Cleaning")
+ 
   print("visualizeR | MISSING VALUES ARE ENCODED AS 'Missing' FOR CATEGORICAL AND MEDIAN IMPUTATION IS USED FOR NUMERIC")
   
   #IF GRAPHS SHOULD BE OUTPUTTED TO A PDF FILE
@@ -93,7 +92,7 @@ visualizeR <- function(df,
   ind <- sample(nrow(df),sample*nrow(df),replace = F)
   df <- df[ind,]
   
-  #REMOVE CATEGORICAL FEATURES WITH MORE THAN 25 LEVELS
+  #REMOVE CATEGORICAL FEATURES WITH MORE THAN x LEVELS
   remove <- length(ncol(df))
   removeInd <- length(ncol(df))
   remove <- NA
@@ -130,11 +129,8 @@ visualizeR <- function(df,
     
     df <- df[,-removeInd]
   }
-  
-  print("**************************************************************************************************")
-  print("                                       Feature Plotting                                           ")
-  print("**************************************************************************************************")
-  
+ 
+  print("visualizeR | 2. Feature Plotting")
   #CLIP OUTLIERS
   for(i in 1:ncol(df)){
     
@@ -254,9 +250,9 @@ visualizeR <- function(df,
   }
   
   if(toupper(summaryStats) == 'Y'){
-    print("**************************************************************************************************")
-    print("                                       Summary Statistics                                         ")
-    print("**************************************************************************************************")
+
+    print("visualizeR | 3. Summary Statistics")
+
     for(i in 1:ncol(df)){
       
       if(class(df[,i]) == 'numeric'){

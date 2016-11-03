@@ -4,10 +4,19 @@
 \alias{visualizeR}
 \title{visualizeR - Automated exploratory data analysis for classification problems}
 \usage{
-visualizeR(df, Outcome, nrBins = 30, sample = 0.3, clipOutliers = "Y",
-  handleMissing = "Y", CatChartType = "stackedHist",
-  NumChartType = "densityFill", summaryStats = "Y", seed = 1234, maxLevels = 25, nrUniques = 20,
-  outputPath = "", outputFileName = "outputPlots")
+visualizeR(df, Outcome,
+           nrBins = 30,
+           sample = 0.3,
+           clipOutliers = "Y",
+           handleMissing = "Y",
+           CatChartType = "stackedHist",
+           NumChartType = "densityFill",
+           summaryStats = "Y",
+           seed = 1234,
+           maxLevels = 25,
+           nrUniques = 20,
+           outputPath = "",
+           outputFileName = "outputPlots")
 }
 \arguments{
 \item{df}{A data.frame object containing plotting features and target/outcome feature. Cannot be left blank.}

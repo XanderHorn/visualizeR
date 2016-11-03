@@ -49,11 +49,11 @@ visualizeR <- function(df,
                        Outcome,
                        nrBins = 30,
                        sample = 0.3,
-                       clipOutliers = 'Y',
-                       handleMissing = 'Y',
+                       clipOutliers = TRUE,
+                       handleMissing = TRUE,
                        CatChartType = 'stackedHist',
                        NumChartType = 'densityFill',
-                       summaryStats = 'Y',
+                       summaryStats = TRUE,
                        seed = 1234,
                        maxLevels = 25,
                        nrUniques = 20,
@@ -135,7 +135,7 @@ visualizeR <- function(df,
     
     print(paste("Plotting Feature",names(df)[i],",",i," Of ",ncol(df),": Missing Observations = ",sum(is.na(df[,i]))))
     
-    if(toupper(clipOutliers) == 'Y' & class(df[,i]) == 'numeric'){
+    if(toupper(clipOutliers) == TRUE & class(df[,i]) == 'numeric'){
       
       feature <- names(df)[i]
       threshold <- quantile(df[,feature],0.99,na.rm = T)
@@ -155,7 +155,7 @@ visualizeR <- function(df,
     if(class(df[,i]) != 'numeric'){
       
       
-      if(handleMissing == 'Y'){
+      if(handleMissing == TRUE){
       df[,i] <- as.factor(ifelse(is.na(as.character(df[,i])) == T,'Missing',as.character(df[,i])))
       }
       
@@ -193,7 +193,7 @@ visualizeR <- function(df,
       #CONTINEOUS FEATURES  
     } else {
       
-      if(handleMissing == 'Y'){
+      if(handleMissing == TRUE){
       df[,i] <- ifelse(is.na(df[,i]) == T,median(df[,i],na.rm = T),df[,i])
       }
       #HISTOGRAM CHART TYPE
@@ -248,7 +248,7 @@ visualizeR <- function(df,
     print(viz)
   }
   
-  if(toupper(summaryStats) == 'Y'){
+  if(toupper(summaryStats) == TRUE){
     print(" ")
     print("visualizeR | 3. Summary Statistics")
 

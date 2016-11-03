@@ -75,8 +75,7 @@ visualizeR <- function(df,
 
 
   print("visualizeR | 1. Partial Data Cleaning")
- 
-  print("visualizeR | MISSING VALUES ARE ENCODED AS 'Missing' FOR CATEGORICAL AND MEDIAN IMPUTATION IS USED FOR NUMERIC")
+  print("MISSING VALUES ARE ENCODED AS 'Missing' FOR CATEGORICAL AND MEDIAN IMPUTATION IS USED FOR NUMERIC")
   
   #IF GRAPHS SHOULD BE OUTPUTTED TO A PDF FILE
   if(outputPath != ''){
@@ -102,7 +101,7 @@ visualizeR <- function(df,
     
     #CONVERT TO FACTOR FEATURES
     if(class(df[,i]) %in% c('factor','character')){
-      df[,i] <- as.factor(df[,i])
+      df[,i] <- as.factor(toupper(as.character(df[,i])))
     } else {
       df[,i] <- as.numeric(df[,i])
     }
@@ -112,7 +111,7 @@ visualizeR <- function(df,
       removeInd[i] <- ifelse(ind ==T,i,NA)
       remove[i] <- ifelse(ind ==T,names(df)[i],NA)
     } else if(class(df[,i]) == 'numeric' & length(unique(df[,i])) < nrUniques){
-      print(paste("visualizeR | CHANGED FEATURE: ",names(df)[i]," TO A FACTOR FEATURE DUE TO LOW UNIQUE VALUES",sep=''))
+      print(paste("CHANGED FEATURE: ",names(df)[i]," TO A FACTOR FEATURE DUE TO LOW UNIQUE VALUES",sep=''))
       df[,i] <- as.factor(df[,i])
     }
     
@@ -123,18 +122,18 @@ visualizeR <- function(df,
     removeInd <- removeInd[!is.na(removeInd)]
     
     for(i in 1:length(remove)){
-      print(paste("visualizeR | REMOVED FEATURE: ",remove[i]," , HAS TOO MANY LEVELS TO PLOT",sep=''))
+      print(paste("REMOVED FEATURE: ",remove[i]," , HAS TOO MANY LEVELS TO PLOT",sep=''))
       
     }
     
     df <- df[,-removeInd]
   }
- 
+  print(" ")
   print("visualizeR | 2. Feature Plotting")
   #CLIP OUTLIERS
   for(i in 1:ncol(df)){
     
-    print(paste("visualizeR | Plotting Feature",names(df)[i],",",i," Of ",ncol(df),": Missing Observations = ",sum(is.na(df[,i]))))
+    print(paste("Plotting Feature",names(df)[i],",",i," Of ",ncol(df),": Missing Observations = ",sum(is.na(df[,i]))))
     
     if(toupper(clipOutliers) == 'Y' & class(df[,i]) == 'numeric'){
       
@@ -250,7 +249,7 @@ visualizeR <- function(df,
   }
   
   if(toupper(summaryStats) == 'Y'){
-
+    print(" ")
     print("visualizeR | 3. Summary Statistics")
 
     for(i in 1:ncol(df)){

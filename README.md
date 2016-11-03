@@ -44,15 +44,15 @@ To install `visualizeR` simply use the code below:
 
 `sample`: Should a random sample be taken in order to speed the plotting process up.
 
-`clipOutliers`: Should outliers be fixed in the data using a median approach. Possible values: 'Y','N'
+`clipOutliers`: Should outliers be fixed in the data using a median approach. Possible values: TRUE,FALSE
 
-`handleMissing`: Should missing values be corrected with 'Missing' value for categorical variables and median imputation for conitnuous variables. Possible values: 'Y','N', Should this be left as 'N' then missing observations will be removed from the plots.
+`handleMissing`: Should missing values be corrected with 'Missing' value for categorical variables and median imputation for conitnuous variables. Possible values: TRUE,FALSE. Should this be left as 'N' then missing observations will be removed from the plots.
 
 `CatChartType`: Indicates the type of chart to use when plotting categorical/factor features. Possible values: 'stackedHist', 'Confusion'
 
 `NumChartType`: Indicates the type of chart to use when plotting numerical/continuous features. Possible values: 'stackedHist', 'densityLine', 'densityFill', 'boxPlot'
 
-`summaryStats`: Should summary statistics be printed for predictors in the dataset, summary stats for continuous and frequency tables for categorical variables. Possible values: 'Y','N'
+`summaryStats`: Should summary statistics be printed for predictors in the dataset, summary stats for continuous and frequency tables for categorical variables. Possible values: TRUE,FALSE
 
 `seed`: Used only for the sampling of the data and to reproduce the plots.
 

@@ -7,11 +7,11 @@
 visualizeR(df, Outcome,
            nrBins = 30,
            sample = 0.3,
-           clipOutliers = "Y",
-           handleMissing = "Y",
+           clipOutliers = TRUE,
+           handleMissing = TRUE,
            CatChartType = "stackedHist",
-           NumChartType = "densityFill",
-           summaryStats = "Y",
+           NumChartType = "boxPlot",
+           summaryStats = FALSE,
            seed = 1234,
            maxLevels = 25,
            nrUniques = 20,
@@ -27,15 +27,15 @@ visualizeR(df, Outcome,
 
 \item{sample}{Should a random sample be taken in order to speed the plotting process up.}
 
-\item{clipOutliers}{Should outliers be fixed in the data using a median approach. Possible values: 'Y','N'}
+\item{clipOutliers}{Should outliers be fixed in the data using a median approach. Possible values: TRUE,FALSE}
 
-\item{handleMissing}{Should missing values be corrected with 'Missing' value for categorical variables and median imputation for conitnuous variables. Possible values: 'Y','N', Should this be left as 'N' then missing observations will be removed from the plots.}
+\item{handleMissing}{Should missing values be corrected with 'Missing' value for categorical variables and median imputation for conitnuous variables. Possible values: TRUE,FALSE. Should this be left as FALSE then missing observations will be removed from the plots.}
 
 \item{CatChartType}{Indicates the type of chart to use when plotting categorical/factor features. Possible values: 'stackedHist', 'Confusion'}
 
 \item{NumChartType}{Indicates the type of chart to use when plotting numerical/continuous features. Possible values: 'stackedHist', 'densityLine', 'densityFill', 'boxPlot'}
 
-\item{summaryStats}{Should summary statistics be printed for predictors in the dataset, summary stats for continuous and frequency tables for categorical variables. Possible values: 'Y','N'}
+\item{summaryStats}{Should summary statistics be printed for predictors in the dataset, summary stats for continuous and frequency tables for categorical variables. Possible values: TRUE,FALSE}
 
 \item{seed}{Used only for the sampling of the data and to reproduce the plots.}
 

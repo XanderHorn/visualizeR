@@ -6,11 +6,11 @@
 #' @param Outcome The feature name of the outcome as character format, e.g. 'Target'. Cannot be left blank.
 #' @param nrBins The number of bins to use in histogram plots of numerical features should 'stackedHist' be used as the chart type in the parameter 'NumChartType'.
 #' @param sample Should a random sample be taken in order to speed the plotting process up.
-#' @param clipOutliers Should outliers be fixed in the data using a median approach. Possible values: 'Y','N'
-#' @param handleMissing Should missing values be corrected with 'Missing' value for categorical variables and median imputation for conitnuous variables. Possible values: 'Y','N', Should this be left as 'N' then missing observations will be removed from the plots.
+#' @param clipOutliers Should outliers be fixed in the data using a median approach. Possible values: TRUE,FALSE
+#' @param handleMissing Should missing values be corrected with 'Missing' value for categorical variables and median imputation for conitnuous variables. Possible values: TRUE,FALSE. Should this be left as 'N' then missing observations will be removed from the plots.
 #' @param CatChartType Indicates the type of chart to use when plotting categorical/factor features. Possible values: 'stackedHist', 'Confusion'
 #' @param NumChartType Indicates the type of chart to use when plotting numerical/continuous features. Possible values: 'stackedHist', 'densityLine', 'densityFill', 'boxPlot'
-#' @param summaryStats Should summary statistics be printed for predictors in the dataset, summary stats for continuous and frequency tables for categorical variables. Possible values: 'Y','N'
+#' @param summaryStats Should summary statistics be printed for predictors in the dataset, summary stats for continuous and frequency tables for categorical variables. Possible values: TRUE,FALSE
 #' @param seed Used only for the sampling of the data and to reproduce the plots.
 #' @param maxLevels The maximum levels allowed for factor features, if a feature has levels more than the threshold it will not be plotted.
 #' @param nrUniques The number of allowed unique values for a feature before it is automatically changed to a categorical feature. If a feature has less than this threshold, the feature will be changed to a categorical feature.
@@ -53,7 +53,7 @@ visualizeR <- function(df,
                        handleMissing = TRUE,
                        CatChartType = 'stackedHist',
                        NumChartType = 'boxPlot',
-                       summaryStats = TRUE,
+                       summaryStats = FALSE,
                        seed = 1234,
                        maxLevels = 25,
                        nrUniques = 20,

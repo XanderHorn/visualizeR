@@ -6,7 +6,7 @@
 \usage{
 visualizeR(df, Outcome, nrBins = 30, sample = 0.3, clipOutliers = "Y",
   handleMissing = "Y", CatChartType = "stackedHist",
-  NumChartType = "densityFill", summaryStats = "Y", seed = 1234, maxLevels = 25,
+  NumChartType = "densityFill", summaryStats = "Y", seed = 1234, maxLevels = 25, nrUniques = 20,
   outputPath = "", outputFileName = "outputPlots")
 }
 \arguments{

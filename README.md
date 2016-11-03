@@ -58,6 +58,8 @@ To install `visualizeR` simply use the code below:
 
 `maxLevels`: The maximum allowed levels for factor features. If this threshold is exceeded the feature will not be plotted. Recommended to limit this as it will make plots hard to read.
 
+`nrUniques`: The number of allowed unique values for a feature before it is automatically changed to a categorical feature. If a feature has less than this threshold, the feature will be changed to a categorical feature.
+
 `ouputPath`: A file path where the plots should be saved in a PDF document. If left blank all plots will be displayed in R.
 
 `outputFileName`: The name of the file containing all the plots.

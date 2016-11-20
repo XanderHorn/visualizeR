@@ -132,7 +132,7 @@ visualizeR <- function(df,
     
     df <- df[,-removeInd]
   }
-  print("")
+    
   print("visualizeR | 2. Feature Plotting")
   #CLIP OUTLIERS
   for(i in 1:ncol(df)){
@@ -253,7 +253,7 @@ visualizeR <- function(df,
   }
   
   if(toupper(summaryStats) == TRUE){
-    print("")
+
     print("visualizeR | 3. Summary Statistics")
 
     for(i in 1:ncol(df)){

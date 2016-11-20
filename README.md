@@ -68,3 +68,6 @@ To install `visualizeR` simply use the code below:
 
 1. Added `maxLevels` to indicate when features should not be plotted.
 2. Added `nrUniques` parameter to indicate when features should be seen as numeric or categorical.
+3. Removed the feature where visualizeR clears the console before output.
+4. Added error handling for missing parameters.
+

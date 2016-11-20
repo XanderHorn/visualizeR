@@ -60,7 +60,11 @@ visualizeR <- function(df,
                        outputPath = '',
                        outputFileName = 'outputPlots'){
 
- 
+  if(missing(df)){
+    print("Please supply a data.frame object to visualizeR")
+  } else if(missing(Outcome)){
+    print("Please indicate which feature is the Outcome/Target/Label feature as type character in the format 'SomeTargetFeature'.")
+  } else {
   
 #**************************************************************************************************
                                     #START FUNCTION
@@ -269,6 +273,7 @@ visualizeR <- function(df,
     dev.off()
   }
   invisible(gc)
+ }
 }
 
 

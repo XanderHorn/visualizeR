@@ -64,3 +64,7 @@ To install `visualizeR` simply use the code below:
 
 `outputFileName`: The name of the file containing all the plots.
 
+# Updates:
+
+1. Added `maxLevels` to indicate when features should not be plotted.
+2. Added `nrUniques` parameter to indicate when features should be seen as numeric or categorical.

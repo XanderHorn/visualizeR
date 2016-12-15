@@ -228,15 +228,12 @@ visualizeR <- function(df,
         
         #BOX PLOTS    
       } else if(NumChartType == 'boxPlot'){
-        vizNum <-  ggplot(df, aes(x=df[,Outcome], y=df[,i], color = df[,Outcome])) +
-          geom_boxplot(outlier.size = 0.1,aes(ymin = min(df[,i]),
-                                              lower = as.numeric(quantile(df[,i],na.rm=T)[2]),
-                                              middle = median(df[,i]),
-                                              upper = as.numeric(quantile(df[,i],na.rm=T)[4]),
-                                              ymax = max(df[,i]))) +
-          ggtitle(paste("Outcome By ",names(df)[i],sep='')) + 
-          labs(x = "Outcome", y =names(df)[i])
-        
+        vizNum <- ggplot(df, aes(x = df[, Outcome], 
+                    y = df[, i], color = df[, Outcome])) +   
+                    geom_boxplot(outlier.colour="black", outlier.shape=16,
+                                 outlier.size=2, notch=FALSE) + 
+                    ggtitle(paste("Outcome By ", names(df)[i], 
+                      sep = "")) + labs(x = "Outcome", y = names(df)[i])
       }  
     }
     
